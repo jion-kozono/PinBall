@@ -58,7 +58,7 @@ public class FripperController : MonoBehaviour
                     SetAngle(this.flickAngle);
                 }
                 // 左側をタップ
-                if (mmyTouches[i].position.x < Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Stationary && tag == "LeftFripperTag")
+                if (myTouches[i].position.x < Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Stationary && tag == "LeftFripperTag")
                 {
                     SetAngle(this.flickAngle);
                 }
