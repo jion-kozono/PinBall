@@ -44,7 +44,7 @@ public class FripperController : MonoBehaviour
             SetAngle(this.defaultAngle);
         }
 
-        if (Input.touchCount > 0 && Input.touchCount < 2)
+        if (Input.touchCount > 0 && Input.touchCount <= 2)
         {
             //このフレームでのタッチ情報を取得
             Touch[] myTouches = Input.touches;
@@ -53,22 +53,22 @@ public class FripperController : MonoBehaviour
             for (int i = 0; i < myTouches.Length; i++)
             {
                 // 右側をタップ
-                if (myTouches[i].position.x > 0 && myTouches[i].phase == TouchPhase.Stationary && tag == "RightFripperTag")
+                if (myTouches[i].position.x > Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Stationary && tag == "RightFripperTag")
                 {
                     SetAngle(this.flickAngle);
                 }
                 // 左側をタップ
-                if (myTouches[i].position.x < 0 && myTouches[i].phase == TouchPhase.Stationary && tag == "LeftFripperTag")
+                if (mmyTouches[i].position.x < Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Stationary && tag == "LeftFripperTag")
                 {
                     SetAngle(this.flickAngle);
                 }
                 // 右側のタップを離す
-                if (myTouches[i].position.x > 0 && myTouches[i].phase == TouchPhase.Ended && tag == "RightFripperTag")
+                if (myTouches[i].position.x > Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Ended && tag == "RightFripperTag")
                 {
                     SetAngle(this.defaultAngle);
                 }
                 // 左側のタップを離す
-                if (myTouches[i].position.x < 0 && myTouches[i].phase == TouchPhase.Ended && tag == "RightFripperTag")
+                if (myTouches[i].position.x < Screen.width * 0.5f && myTouches[i].phase == TouchPhase.Ended && tag == "LeftFripperTag")
                 {
                     SetAngle(this.defaultAngle);
                 }
